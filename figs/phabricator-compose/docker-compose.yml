@@ -1,0 +1,29 @@
+web:
+  image: nikowoot/phabricator
+  links:
+   - db
+  ports:
+   - "80:80"
+  environment:
+   - PHABRICATOR_BASEURI=127.0.0.1
+   - SQL_HOST=db
+   - SQL_PORT=3306
+   - SQL_USER=admin
+   - SQL_PASS=admin
+   - EMAIL_DEFAULT=test@test.com
+   - EMAIL_DOMAIN=test.com
+   - SMTP_HOST=smtp.test.com
+   - SMTP_PORT=8080
+   - SMTP_USER=user
+   - SMTP_PASSWORD=user
+   - SMTP_PROTOCOL=ssl
+   - SMTP_ENCODING=default
+
+db:
+  image: nikowoot/mariadb
+  ports:
+   - "3306:3306"
+  environment:
+  - SQL_USERNAME=admin
+  - SQL_PASSWORD=admin
+  - SQL_DATABASE=phabricator

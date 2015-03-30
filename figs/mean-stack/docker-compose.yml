@@ -1,0 +1,16 @@
+web:
+  image: nikowoot/nodejs
+  links:
+   - db
+  ports:
+   - "1337:1337"
+
+db:
+  image: nikowoot/mongodb
+  ports:
+   - "27017:27017"
+   - "28017:28017"
+  environment:
+  - SQL_USERNAME=admin
+  - SQL_PASSWORD=admin
+  - SQL_DATABASE=phabricator

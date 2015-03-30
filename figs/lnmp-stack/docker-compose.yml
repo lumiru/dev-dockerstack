@@ -1,0 +1,28 @@
+web:
+  image: nikowoot/nginxwithphpfpm
+  links:
+   - db
+   - memcached
+  ports:
+   - "80:80"
+  volumes:
+   - /var/www/html:/var/www/html
+
+db:
+  image: nikowoot/mariadb
+  ports:
+   - "3306:3306"
+  environment:
+  - SQL_USERNAME=admin
+  - SQL_PASSWORD=admin
+  - SQL_DATABASE=phabricator
+
+memcached:
+  image: nikowoot/memcached
+  ports:
+   - "11211:11211"
+  environment:
+  - MEMCACHED_IP=0.0.0.0
+  - MEMCACHED_SIZE=64
+  - MEMCACHED_CONCURENT=25
+  - MEMCACHED_THREAD=4
