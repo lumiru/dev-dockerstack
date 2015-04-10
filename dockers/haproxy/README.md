@@ -4,13 +4,14 @@ NodeJS Docker Image by NikoWoot.
 Included packages (in base image) : - nano
 		   							- zip, unzip
 		   							- openssh-server (sshd)
-Included packages : - nodejs
+Included packages : - haproxy
 
 Softwares is in default version of ubuntu 14.04 repositories.
 
 ==========
 
 CREATED and MAINTENED BY
+Frédéric TURPIN <lumiru@turp.in>
 Nicolas GAUTIER <ngautier@enroot.fr>
 
 ==========

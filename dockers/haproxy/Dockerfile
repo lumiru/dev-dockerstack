@@ -1,5 +1,5 @@
 FROM nikowoot/base
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## INSTALLATION PART

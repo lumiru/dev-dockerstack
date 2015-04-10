@@ -1,5 +1,5 @@
 FROM nikowoot/java-default
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## CONFIGURATION SOFTWARE PART
