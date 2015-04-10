@@ -1,4 +1,4 @@
-NodeJS Docker Image by NikoWoot.
+HAProxy Docker Image by lumiru.
 	Based on "Base Docker Image by NikoWoot".
 
 Included packages (in base image) : - nano
