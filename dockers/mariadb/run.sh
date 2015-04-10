@@ -45,6 +45,10 @@ if [ ! -f ~/firstrun ]; then
 
 	  	sed -e 's/^datadir\t.*$/datadir = \/data/' -i /etc/mysql/my.cnf
 	  	sed -e 's/^bind-address\t.*$/bind-address = 0.0.0.0/' -i /etc/mysql/my.cnf
+	  	sed -e 's/^log_bin/#log_bin/' -i /etc/mysql/my.cnf
+	  	sed -e 's/^log_bin_index/#log_bin_index/' -i /etc/mysql/my.cnf
+	  	sed -e 's/^expire_logs_days/#expire_logs_days/' -i /etc/mysql/my.cnf
+	  	sed -e 's/^max_binlog_size/#max_binlog_size/' -i /etc/mysql/my.cnf
 	  	cp /etc/mysql/my.cnf /usr/share/mysql/my-default.cnf
 	  fi
 
@@ -58,12 +62,16 @@ if [ ! -f ~/firstrun ]; then
  	  # Create new User with Admin rights
 	  if [ -n "$SQL_USERNAME" ] && [ -n "$SQL_PASSWORD" ]; then
 
+		if [ -z $SQL_USERHOST ]; then
+			SQL_USERHOST='172.17.0.0/255.255.0.0'
+		fi
+
       	 # Print in file and STDOUT
       	 echo "=> Create new admin $SQL_USERNAME:$SQL_PASSWORD"
    	     echo "$SQL_USERNAME:$SQL_PASSWORD" > /mysql.txt
 
-   	     /usr/bin/mysql -uroot -e "CREATE USER '$SQL_USERNAME'@'%' IDENTIFIED BY '$SQL_PASSWORD'"
-   	     /usr/bin/mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '$SQL_USERNAME'@'%' WITH GRANT OPTION"
+   	     /usr/bin/mysql -uroot -e "CREATE USER '$SQL_USERNAME'@'$SQL_USERHOST' IDENTIFIED BY '$SQL_PASSWORD'"
+   	     /usr/bin/mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '$SQL_USERNAME'@'$SQL_USERHOST' WITH GRANT OPTION"
 	  fi  
 
       # Create dabatase

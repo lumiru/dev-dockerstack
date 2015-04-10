@@ -13,15 +13,15 @@ if [ -n "$SSH_ROOT_PASSWORD" ]; then
 	# =========================================
 	# Change Root Password
 	# =========================================
-    echo "root:$SSH_ROOT_PASSWORD" | chpasswd
+	echo "root:$SSH_ROOT_PASSWORD" | chpasswd
 
-    # =========================================
+	# =========================================
 	# Print in file and console
 	# =========================================
-    echo "SSHD ==> root:$SSH_ROOT_PASSWORD"
-    echo "SSHD ==> root:$SSH_ROOT_PASSWORD" > /sshd.txt
+	echo "SSHD ==> root:$SSH_ROOT_PASSWORD"
+	echo "SSHD ==> root:$SSH_ROOT_PASSWORD" > /sshd.txt
 
-    # ============================================
+	# ============================================
 	# SSHD - Configure access by Password or PAM
 	# ============================================
 	sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -39,45 +39,49 @@ fi
 # =========================================
 if [ ! -f ~/firstrun ]; then
 
-	  # Check if volume is not mapped on this directory
-	  if [ ! -f /usr/share/mysql/my-default.cnf ] ; then
-	    echo "=> Write MySQLD default-configuration"
+	# Check if volume is not mapped on this directory
+	if [ ! -f /usr/share/mysql/my-default.cnf ] ; then
+		echo "=> Write MySQLD default-configuration"
 
-	  	sed -e 's/^datadir\t.*$/datadir = \/data/' -i /etc/mysql/my.cnf
-	  	sed -e 's/^bind-address\t.*$/bind-address = 0.0.0.0/' -i /etc/mysql/my.cnf
-	  	cp /etc/mysql/my.cnf /usr/share/mysql/my-default.cnf
-	  fi
+		sed -e 's/^datadir\t.*$/datadir = \/data/' -i /etc/mysql/my.cnf
+		sed -e 's/^bind-address\t.*$/bind-address = 0.0.0.0/' -i /etc/mysql/my.cnf
+		cp /etc/mysql/my.cnf /usr/share/mysql/my-default.cnf
+	fi
 
-	  echo "=> Install MySQLD database"
-	  mysql_install_db > /dev/null 2>&1
+	echo "=> Install MySQLD database"
+	mysql_install_db > /dev/null 2>&1
 
- 	  # Start MySQLD
-      /usr/bin/mysqld_safe &
-      while ! nc -vz localhost 3306; do sleep 1; done
+	# Start MySQLD
+	/usr/bin/mysqld_safe &
+	while ! nc -vz localhost 3306; do sleep 1; done
 
- 	  # Create new User with Admin rights
-	  if [ -n "$SQL_USERNAME" ] && [ -n "$SQL_PASSWORD" ]; then
+	# Create new User with Admin rights
+	if [ -n "$SQL_USERNAME" ] && [ -n "$SQL_PASSWORD" ]; then
 
-      	 # Print in file and STDOUT
-      	 echo "=> Create new admin $SQL_USERNAME:$SQL_PASSWORD"
-   	     echo "$SQL_USERNAME:$SQL_PASSWORD" > /mysql.txt
+		if [ -z $SQL_USERHOST ]; then
+			SQL_USERHOST='172.17.0.0/255.255.0.0'
+		fi
 
-   	     /usr/bin/mysql -uroot -e "CREATE USER '$SQL_USERNAME'@'%' IDENTIFIED BY '$SQL_PASSWORD'"
-   	     /usr/bin/mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '$SQL_USERNAME'@'%' WITH GRANT OPTION"
-	  fi
+		# Print in file and STDOUT
+		echo "=> Create new admin $SQL_USERNAME:$SQL_PASSWORD"
+		echo "$SQL_USERNAME:$SQL_PASSWORD" > /mysql.txt
 
-      # Create dabatase
-      if [ -n "$SQL_DATABASE" ]; then
-      	echo "=> Create Database: \"$SQL_DATABASE\"..."
-      	/usr/bin/mysql -uroot -e "CREATE DATABASE $SQL_DATABASE"
-      fi
+		/usr/bin/mysql -uroot -e "CREATE USER '$SQL_USERNAME'@'$SQL_USERHOST' IDENTIFIED BY '$SQL_PASSWORD'"
+		/usr/bin/mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '$SQL_USERNAME'@'$SQL_USERHOST' WITH GRANT OPTION"
+	fi
 
-      # Stop MySQLD
-      mysqladmin -uroot shutdown
-      while nc -vz localhost 3306; do sleep 1; done
+	# Create dabatase
+	if [ -n "$SQL_DATABASE" ]; then
+		echo "=> Create Database: \"$SQL_DATABASE\"..."
+		/usr/bin/mysql -uroot -e "CREATE DATABASE $SQL_DATABASE"
+	fi
 
-      # Save firstrun
-	  echo "true" > ~/firstrun
+	# Stop MySQLD
+	mysqladmin -uroot shutdown
+	while nc -vz localhost 3306; do sleep 1; done
+
+	# Save firstrun
+	echo "true" > ~/firstrun
 fi
 
 # =========================================
