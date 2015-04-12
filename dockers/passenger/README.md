@@ -1,15 +1,13 @@
-Redmine 2.5.x Docker Image by lumiru.
-	Based on "Java-default Image by NikoWoot".
+Ruby Passenger Docker Image by lumiru.
+	Based on "Base Image by NikoWoot".
 
 Included packages (in base image) : - nano
 									- zip, unzip
 									- openssh-server (sshd)
-									- git
-									- curl
-									- RVM (with passenger + bundler)
 
-Included packages : - subversion
-					- Redmine 2.5.x
+Included packages : - git
+					- curl
+					- RVM (with passenger + bundler)
 
 Softwares is in default version of ubuntu 14.04 repositories.
 

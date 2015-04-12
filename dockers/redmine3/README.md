@@ -1,15 +1,16 @@
-Redmine 3.x Docker Image by lumiru.
+Redmine 3.0.x Docker Image by lumiru.
 	Based on "Base Image by NikoWoot".
+
 
 Included packages (in base image) : - nano
 									- zip, unzip
 									- openssh-server (sshd)
+									- git
+									- curl
+									- RVM (with passenger + bundler)
 
-Included packages : - git
-					- curl
-					- make
-					- gcc
-					- RVM (ruby + rails)
+Included packages : - subversion
+					- Redmine 3.0.x
 
 Softwares is in default version of ubuntu 14.04 repositories.
 
