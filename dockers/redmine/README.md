@@ -1,10 +1,15 @@
-HAProxy Docker Image by lumiru.
-	Based on "Base Docker Image by NikoWoot".
+Redmine 2.5.x Docker Image by lumiru.
+	Based on "Java-default Image by NikoWoot".
 
 Included packages (in base image) : - nano
-		   							- zip, unzip
-		   							- openssh-server (sshd)
-Included packages : - haproxy
+									- zip, unzip
+									- openssh-server (sshd)
+									- git
+									- curl
+									- RVM (with passenger + bundler)
+
+Included packages : - subversion
+					- Redmine 2.5.x
 
 Softwares is in default version of ubuntu 14.04 repositories.
 
