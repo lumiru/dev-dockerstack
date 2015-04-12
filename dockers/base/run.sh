@@ -6,34 +6,6 @@
 # $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
 # =========================================
-# Activate SSHD, if variable is defined
+# Launch Bash (basic image)
 # =========================================
-if [ -n "$SSH_ROOT_PASSWORD" ]; then
-
-	# =========================================
-	# Change Root Password
-	# =========================================
-    echo "root:$SSH_ROOT_PASSWORD" | chpasswd
-
-    # =========================================
-	# Print in file and console
-	# =========================================
-    echo "SSHD ==> root:$SSH_ROOT_PASSWORD"
-    echo "SSHD ==> root:$SSH_ROOT_PASSWORD" > /sshd.txt
-
-    # ============================================
-	# SSHD - Configure access by Password or PAM
-	# ============================================
-	sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-	# =========================================
-	# Launch SSHD
-	# =========================================
-	/usr/sbin/sshd
-else
-	# =========================================
-	# Launch Bash (basic image)
-	# =========================================
-	/bin/bash -i
-fi
+/bin/bash -i

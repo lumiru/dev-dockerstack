@@ -1,5 +1,5 @@
-FROM nikowoot/base
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+FROM lumiru/base
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## INSTALLATION PART
@@ -18,7 +18,6 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22
 
 # Launch run script
 CMD /run.sh

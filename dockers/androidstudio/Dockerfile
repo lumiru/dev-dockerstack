@@ -1,4 +1,4 @@
-FROM nikowoot/java:default
+FROM lumiru/java:default
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================
@@ -48,7 +48,6 @@ USER root
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22
 
 # Launch run script
 CMD /run.sh

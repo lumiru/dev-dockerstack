@@ -1,16 +1,13 @@
-Base Docker Image by NikoWoot.
+Base Docker Image by lumiru.
 
-Included packages : - nano
-		   			- zip, unzip
-		   			- git
-		   			- openssh-server (sshd)
+Included packages : - zip, unzip
 
 Softwares is in default version of ubuntu 14.04 repositories.
 
 ==========
 
 CREATED and MAINTENED BY
-Nicolas GAUTIER <ngautier@enroot.fr>
+Frédéric TURPIN <lumiru@turp.in>
 
 ==========
 	Fork me, if you like my repository.

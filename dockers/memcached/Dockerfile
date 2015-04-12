@@ -1,5 +1,5 @@
-FROM nikowoot/base
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+FROM lumiru/base
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## CONFIGURATION SOFTWARE PART
@@ -26,7 +26,7 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 11211
+EXPOSE 11211
 
 # Launch run script
 CMD /run.sh

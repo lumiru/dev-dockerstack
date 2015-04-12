@@ -1,4 +1,4 @@
-FROM nikowoot/base
+FROM lumiru/base
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
@@ -18,7 +18,7 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 80
+EXPOSE 80
 
 # Launch run script
 CMD /run.sh

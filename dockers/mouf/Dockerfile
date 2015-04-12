@@ -1,4 +1,4 @@
-FROM nikowoot/nginxwithphpfpm
+FROM lumiru/nginxwithphpfpm
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================
@@ -16,7 +16,7 @@ ADD ./site-default /etc/nginx/sites-available/default
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 80 443
+EXPOSE 80 443
 
 # Launch run script
 CMD /run.sh

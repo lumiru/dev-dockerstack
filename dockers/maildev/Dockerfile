@@ -1,4 +1,4 @@
-FROM nikowoot/nodejs
+FROM lumiru/nodejs
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================
@@ -18,7 +18,7 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets (1025 : SMTP_PORT, 1080 : WEB_GUI)
-EXPOSE 22 1025 1080
+EXPOSE 1025 1080
 
 # Launch run script
 CMD /run.sh

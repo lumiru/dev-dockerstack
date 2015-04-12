@@ -1,4 +1,4 @@
-FROM nikowoot/java:default
+FROM lumiru/java:default
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================
@@ -51,7 +51,6 @@ ENV PATH $PATH:/usr/local/go/bin:/$GOPATH/bin
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22
 
 # Launch run script
 CMD /run.sh

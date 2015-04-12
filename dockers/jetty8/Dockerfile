@@ -1,4 +1,4 @@
-FROM nikowoot/java-default
+FROM lumiru/java-default
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
@@ -24,7 +24,6 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22
 
 # Launch run script
 CMD /run.sh

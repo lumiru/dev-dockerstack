@@ -1,4 +1,4 @@
-FROM nikowoot/nodejs
+FROM lumiru/nodejs
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================
@@ -18,7 +18,7 @@ RUN chmod 755 /run.sh
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 2368
+EXPOSE 2368
 
 # Move user to ghost directory
 WORKDIR /data/ghost

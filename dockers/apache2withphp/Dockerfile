@@ -1,5 +1,5 @@
-FROM nikowoot/base
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+FROM lumiru/base
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## INSTALLATION PART
@@ -22,7 +22,7 @@ RUN chmod 655 /etc/apache2/sites-available/000-default.conf
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 80 443
+EXPOSE 80 443
 
 # Launch run script
 CMD /run.sh

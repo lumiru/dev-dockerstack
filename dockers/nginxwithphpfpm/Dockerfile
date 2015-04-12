@@ -1,5 +1,5 @@
-FROM nikowoot/base
-MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
+FROM lumiru/base
+MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
 ## INSTALLATION PART
@@ -24,7 +24,7 @@ ADD ./nginx.conf /etc/nginx/nginx.conf
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 22 80 443
+EXPOSE 80 443
 
 # Launch run script
 CMD /run.sh
