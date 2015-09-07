@@ -15,8 +15,8 @@ ADD ./run.sh /run.sh
 RUN chmod 755 /run.sh
 
 # Copy "000-default.conf" in Apache2 sites-available
-ADD ./000-default.conf /etc/apache2/sites-available/000-default.conf
-RUN chmod 655 /etc/apache2/sites-available/000-default.conf
+ADD ./000-default.conf /etc/apache2/sites-available/default
+RUN chmod 655 /etc/apache2/sites-available/default
 
 ## ================================
 ## LAUNCH PART

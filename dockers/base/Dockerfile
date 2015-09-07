@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================

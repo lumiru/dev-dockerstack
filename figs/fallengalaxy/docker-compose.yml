@@ -1,25 +1,25 @@
-# docker run -e PHABRICATOR_BASEURI=http://127.0.0.1:8181/ -e SQL_HOST=db -e SQL_PORT=3306 -e SQL_USER=root -e SQL_PASS=root -e SMTP_HOST=smtp.test.com -e SMTP_PORT=465 -e SMTP_USER=user@test.com -e SMTP_PASSWORD=test -e SMTP_PROTOCOL=ssl -e SMTP_ENCODING=8bit -e EMAIL_DOMAIN=test.com -e EMAIL_DEFAULT=no-reply@test.com --link=angry_tesla:db -p 8181:80 nikowoot/phabricator
+# docker run -e PHABRICATOR_BASEURI=http://127.0.0.1:8181/ -e SQL_HOST=db -e SQL_PORT=3306 -e SQL_USER=root -e SQL_PASS=root -e SMTP_HOST=smtp.test.com -e SMTP_PORT=465 -e SMTP_USER=user@test.com -e SMTP_PASSWORD=test -e SMTP_PROTOCOL=ssl -e SMTP_ENCODING=8bit -e EMAIL_DOMAIN=test.com -e EMAIL_DEFAULT=no-reply@test.com --link=angry_tesla:db -p 8181:80 lumiru/phabricator
 
-# docker run -e SQL_USERNAME=root -e SQL_PASSWORD=root -e SQL_DATABASE=pandora -p 3306:3306 --name=fg_db nikowoot/mariadb
+# docker run -e SQL_USERNAME=root -e SQL_PASSWORD=root -e SQL_DATABASE=pandora -p 3306:3306 --name=fg_db lumiru/mariadb
 
 db:
-  image: nikowoot/mariadb
+  image: lumiru/mariadb
   environment:
     - SQL_USERNAME=root
     - SQL_PASSWORD=root
     - SQL_DATABASE=pandora
 
-# docker run -v /var/www/nginx:/var/www/html --name=fg_media nikowoot/nginxwithphpfpm
+# docker run -v /var/www/nginx:/var/www/html --name=fg_media lumiru/nginxwithphpfpm
 
 media:
-  image: nikowoot/nginxwithphpfpm
+  image: lumiru/nginxwithphpfpm
   volumes:
     - /var/www/nginx:/var/www/html
 
 # docker run -d -v /home/lumiru/workspace/fallengalaxy/docker/contexts:/srv/jetty/contexts -v /home/lumiru/workspace/fallengalaxy/docker/logs:/srv/jetty/logs -v /home/lumiru/workspace/fallengalaxy/docker/webapps:/srv/jetty/webapps --link=fg_db:db --link=fg_media:media.fg.dev.turp.in --name=fg_pandora lumiru/jetty
 
 pandora:
-  image: lumiru/jetty
+  image: lumiru/jetty8
   links:
     - db
     - "media:media.fg.dev.turp.in"

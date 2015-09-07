@@ -3,9 +3,7 @@
 # =========================================
 # Update apt-cache and install EngineX (NginX)
 # =========================================
-DEBIAN_FRONTEND=noninteractive echo "deb http://ppa.launchpad.net/nginx/stable/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/nginx-stable.list && \
-						 	   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C && \
-							   apt-get update && \
+DEBIAN_FRONTEND=noninteractive apt-get update && \
 							   apt-get -y --no-install-recommends install nginx && \
 							   apt-get clean && \
 							   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
