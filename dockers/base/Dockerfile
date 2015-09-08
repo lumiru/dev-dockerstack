@@ -19,6 +19,10 @@ RUN rm -f /install.sh
 ADD ./run.sh /run.sh
 RUN chmod 755 /run.sh
 
+# Copy, change rights "run.sh"
+ADD ./motd.sh /etc/profile.d/easycom_motd.sh
+RUN chmod 755 /etc/profile.d/easycom_motd.sh
+
 ## ================================
 ## LAUNCH PART
 ## ================================
