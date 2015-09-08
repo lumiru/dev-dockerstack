@@ -48,7 +48,6 @@ DEBIAN_FRONTEND=noninteractive a2enmod actions && \
 								a2enmod rewrite && \
 								a2enmod deflate && \
 								a2enmod headers && \
-								a2enmod ssl && \
 
 
 echo "ServerName $(cat /etc/hostname)" > /etc/apache2/conf-available/servername.conf
