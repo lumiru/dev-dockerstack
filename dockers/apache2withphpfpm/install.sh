@@ -25,6 +25,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get update && \
 							   apt-get -y --no-install-recommends install php5 \
 																		  php5-cli \
+																		  php5-fpm \
 																		  php5-curl \
 																		  php5-gd \
 																		  php5-imagick \
