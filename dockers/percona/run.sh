@@ -53,7 +53,8 @@ if [ ! -f ~/firstrun ]; then
 
 	# Start MySQLD
 	/usr/bin/mysqld_safe &
-	while ! nc -vz localhost 3306; do sleep 1; done
+	# while ! nc -vz localhost 3306; do sleep 1; done
+	sleep 10
 
 	# Create new User with Admin rights
 	if [ -n "$SQL_USERNAME" ] && [ -n "$SQL_PASSWORD" ]; then
@@ -78,7 +79,8 @@ if [ ! -f ~/firstrun ]; then
 
 	# Stop MySQLD
 	mysqladmin -uroot shutdown
-	while nc -vz localhost 3306; do sleep 1; done
+	# while nc -vz localhost 3306; do sleep 1; done
+	sleep 10
 
 	# Save firstrun
 	echo "true" > ~/firstrun
