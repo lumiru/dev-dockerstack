@@ -1,5 +1,15 @@
 #!/bin/bash
 
+file=$(cat <<EOF
+deb http://httpredir.debian.org/debian jessie non-free
+deb http://httpredir.debian.org/debian jessie-updates non-free
+deb http://security.debian.org jessie/updates non-free
+EOF
+)
+
+echo "$file" > /etc/apt/sources.list.d/non-free.list
+
+
 # =========================================
 # Update apt-cache and install Apache2
 # =========================================

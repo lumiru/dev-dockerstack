@@ -6,8 +6,11 @@
 DEBIAN_FRONTEND=noninteractive apt-get update && \
 							   apt-get -y --no-install-recommends install unzip \
 							   											  zip \
+							   											  nano \
+							   											  less \
 							   											  wget \
 							   											  git \
+							   											  sudo \
 							   											  update-notifier \
 							   											  lsb-release \
 							   											  ca-certificates && \
