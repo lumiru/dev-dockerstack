@@ -1,4 +1,4 @@
-FROM lumiru/nginxwithphpfpm
+FROM easycom/nginxwithphpfpm
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================

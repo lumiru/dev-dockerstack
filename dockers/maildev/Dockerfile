@@ -1,4 +1,4 @@
-FROM lumiru/nodejs
+FROM easycom/nodejs
 MAINTAINER Nicolas GAUTIER <ngautier@enroot.fr>
 
 ## ================================

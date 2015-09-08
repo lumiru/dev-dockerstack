@@ -1,4 +1,4 @@
-FROM lumiru/mariadb
+FROM easycom/mariadb
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================

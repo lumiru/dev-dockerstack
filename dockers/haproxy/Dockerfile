@@ -1,4 +1,4 @@
-FROM lumiru/base
+FROM easycom/base
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================

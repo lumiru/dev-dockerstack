@@ -1,4 +1,4 @@
-FROM lumiru/passenger
+FROM easycom/passenger
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================

@@ -1,4 +1,4 @@
-FROM lumiru/java-default
+FROM easycom/java-default
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================

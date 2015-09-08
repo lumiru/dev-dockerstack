@@ -1,4 +1,4 @@
-FROM lumiru/java-oracle
+FROM easycom/java-oracle
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
