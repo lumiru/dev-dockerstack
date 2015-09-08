@@ -11,6 +11,8 @@
 # Read file /etc/apache2/envvars
 source /etc/apache2/envvars
 
+service php5-fpm start
+
 # =========================================
 # Launch httpd
 # =========================================
