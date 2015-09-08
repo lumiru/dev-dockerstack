@@ -2,6 +2,12 @@ FROM easycom/base
 MAINTAINER Frédéric TURPIN <lumiru@turp.in>
 
 ## ================================
+## CONFIGURATION SOFTWARE PART
+## ================================
+# ==> Default percona root password
+ENV DEFAULT_ROOT_PASSWORD root
+
+## ================================
 ## INSTALLATION PART
 ## ================================
 # Copy, change rights, execute, delete script file "install.sh"
