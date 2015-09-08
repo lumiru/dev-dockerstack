@@ -58,4 +58,4 @@ printf "Usage de /var : %s \t Reste : %s \n" $var_usage $var_dispo
 printf "Usage du Swap : %s \n" $swap_usage
 printf "Utilisateurs connectés: %s \n" $users
 
-/usr/lib/update-notifier/apt-check --human-readable
+# /usr/lib/update-notifier/apt-check --human-readable

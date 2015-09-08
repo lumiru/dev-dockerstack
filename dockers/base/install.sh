@@ -11,7 +11,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 							   											  wget \
 							   											  git \
 							   											  sudo \
-							   											  update-notifier \
+							   											  htop \
 							   											  lsb-release \
 							   											  ca-certificates && \
 							   apt-get clean && \
