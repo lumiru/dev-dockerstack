@@ -19,8 +19,8 @@ ADD ./000-default.conf /etc/apache2/sites-available/default.conf
 RUN chmod 655 /etc/apache2/sites-available/default.conf
 
 # Copy "php5-fpm.conf" in Apache2 conf-available
-ADD ./php5-fpm.conf /etc/apache2/sites-available/php5-fpm.conf
-RUN chmod 655 /etc/apache2/sites-available/php5-fpm.conf
+ADD ./php5-fpm.conf /etc/apache2/conf-available/php5-fpm.conf
+RUN chmod 655 /etc/apache2/conf-available/php5-fpm.conf
 
 ## ================================
 ## LAUNCH PART
