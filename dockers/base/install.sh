@@ -12,6 +12,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 							   											  git \
 							   											  sudo \
 							   											  htop \
+							   											  zabbix-agent \
 							   											  lsb-release \
 							   											  ca-certificates && \
 							   apt-get clean && \
