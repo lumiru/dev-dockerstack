@@ -28,7 +28,7 @@ cd apache-couchdb-*/
 ./configure
 make
 make install
-rm -R apache-couchdb-*
+rm -R /apache-couchdb-*
 
 useradd --no-create-home couchdb
 chown -R couchdb:couchdb /usr/local/var/lib/couchdb/ /usr/local/var/log/couchdb/ /usr/local/var/run/couchdb/
