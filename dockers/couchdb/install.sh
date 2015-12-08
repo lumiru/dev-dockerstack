@@ -24,15 +24,18 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 wget $COUCHDB_TARBALL_URL
 tar -xvf apache-couchdb-*.tar.gz
+cd apache-couchdb-*/
 ./configure
 make
 make install
-adduser --no-create-home couchdb
+rm -R apache-couchdb-*
+
+useradd --no-create-home couchdb
 chown -R couchdb:couchdb /usr/local/var/lib/couchdb/ /usr/local/var/log/couchdb/ /usr/local/var/run/couchdb/
 ln -s /usr/local/etc/init.d/couchdb /etc/init.d/couchdb
 update-rc.d couchdb defaults
-sed -i "s,port = ,port = 80 ;," /usr/local/etc/couchdb/local.ini
-sed -i "s,bind_address = ,bind_address = 0.0.0.0," /usr/local/etc/couchdb/local.ini
+sed -i "s,;port = ,port = 80 ;," /usr/local/etc/couchdb/local.ini
+sed -i "s,;bind_address = ,bind_address = 0.0.0.0 ;," /usr/local/etc/couchdb/local.ini
 
 # =========================================
 # Start CouchDB
