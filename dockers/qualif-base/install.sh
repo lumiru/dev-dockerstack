@@ -11,3 +11,5 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin no/' /etc/ssh/sshd_config
 sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+
+sed -ri 's/#force_color_prompt=yes/force_color_prompt=yes/g' /etc/skel/.bashrc
