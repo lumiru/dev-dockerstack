@@ -10,11 +10,13 @@ RUN chmod 755 /install.sh
 RUN /install.sh
 RUN rm -f /install.sh
 
+ADD ./sshd_config /etc/ssh/sshd_config
+
 ## ================================
 ## LAUNCH PART
 ## ================================
 # Expose sockets
-EXPOSE 3000
+EXPOSE 3000 22
 
 # Launch run script
-CMD gogs run web
+CMD service cron start; service ssh start; gogs run web
