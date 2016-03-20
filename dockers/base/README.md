@@ -1,8 +1,8 @@
 Base Docker Image by lumiru.
 
-Included packages : - zip, unzip
+Included packages : wget, zip, unzip, ca-certs
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of Debian 8 repositories.
 
 ==========
 

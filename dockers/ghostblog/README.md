@@ -1,13 +1,12 @@
 GhostBlog Docker Image by NikoWoot.
 	Based on "NodeJS Docker Image by NikoWoot".
 
-Included packages (in base image) : - nano
+Included packages (in base image) : - wget
 		   							- zip, unzip
-		   							- openssh-server (sshd)
 		   							- nodejs
 Included packages : - ghost (install with npm)
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of debian 8 repositories.
 
 ==========
 

@@ -48,7 +48,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 DEBIAN_FRONTEND=noninteractive a2enmod actions && \
 								a2enmod rewrite && \
 								a2enmod deflate && \
-								a2enmod headers && \
+								a2enmod headers
 
 sed -i 's,#Header,Header,' /etc/apache2/conf-available/security.conf
 sed -i 's,#<DirectoryMatch "/\.svn,<DirectoryMatch "/\.git,' /etc/apache2/conf-available/security.conf

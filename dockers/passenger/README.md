@@ -1,15 +1,14 @@
 Ruby Passenger Docker Image by lumiru.
-	Based on "Base Image by NikoWoot".
+	Based on "Base Image by lumiru".
 
-Included packages (in base image) : - nano
+Included packages (in base image) : - wget
 									- zip, unzip
-									- openssh-server (sshd)
 
 Included packages : - git
 					- curl
 					- RVM (with passenger + bundler)
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of debian 8 repositories.
 
 ==========
 

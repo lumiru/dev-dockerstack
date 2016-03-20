@@ -1,9 +1,8 @@
-Apache2 with PHP Docker Image by lumiru.
+Apache2 with PHP-FPM Docker Image by lumiru.
 	Based on "Base Docker Image by lumiru".
 
-Included packages (in base image) : - nano
+Included packages (in base image) : - wget
 		   							- zip, unzip
-		   							- openssh-server (sshd)
 Included packages : - apache2
 		   			- php5
 					- php5-cli
@@ -22,7 +21,7 @@ Included packages : - apache2
 
 Apache2 mod rewrite is activate.
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of debian 8 repositories.
 
 ==========
 
