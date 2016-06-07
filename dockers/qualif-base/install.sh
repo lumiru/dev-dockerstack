@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# =========================================
-# Update apt-cache and install Apache2
-# =========================================
+# ================================================
+# Update apt-cache and install minimal requirments
+# ================================================
+DEBIAN_FRONTEND=noninteractive wget -O - https://deb.nodesource.com/setup_4.x | bash -
+
 DEBIAN_FRONTEND=noninteractive apt-get update && \
-							   apt-get -y --no-install-recommends install mysql-client openssh-server && \
+							   apt-get -y --no-install-recommends install mysql-client openssh-server rsync drush nodejs && \
 							   apt-get clean && \
 							   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
