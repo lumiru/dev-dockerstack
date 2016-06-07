@@ -1,15 +1,14 @@
 Phabricator Docker Image by NikoWoot.
 	Based on "Nginx + PHP-Fpm Docker Image by NikoWoot".
 
-Included packages (in base image) : - nano
+Included packages (in base image) : - wget
 		   							- zip, unzip
-		   							- openssh-server (sshd)
 		   							- nginx
 									- php-fpm
 									- composer (from : https://getcomposer.org/installer)
 Included packages : - Phabricator
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of debian 8 repositories.
 
 ==========
 

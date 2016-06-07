@@ -1,13 +1,10 @@
-Mouf Docker Image by NikoWoot.
-	Based on "Nginx + PHP-Fpm Docker Image by NikoWoot".
+Gogs Docker Image by lumiru.
+	Based on "Base Docker Image by lumiru".
 
 Included packages (in base image) : - wget
 		   							- zip, unzip
-		   							- nginx
-									- php-fpm
-									- composer (from : https://getcomposer.org/installer)
-									
-Included packages : - Ready for use Mouf-PHP
+Included packages : - openssh-server (sshd)
+					- gogs
 
 Softwares is in default version of debian 8 repositories.
 

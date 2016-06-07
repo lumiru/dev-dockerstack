@@ -48,8 +48,14 @@ DEBIAN_FRONTEND=noninteractive apt-get update && \
 DEBIAN_FRONTEND=noninteractive a2enmod actions && \
 								a2enmod rewrite && \
 								a2enmod deflate && \
-								a2enmod headers && \
+								a2enmod headers
 
+sed -i 's,#Header,Header,' /etc/apache2/conf-available/security.conf
+sed -i 's,#<DirectoryMatch "/\.svn,<DirectoryMatch "/\.git,' /etc/apache2/conf-available/security.conf
+sed -i 's,ServerSignature On,ServerSignature Off,' /etc/apache2/conf-available/security.conf
+sed -i 's,ServerTokens OS,ServerTokens Prod,' /etc/apache2/conf-available/security.conf
+sed -i 's,#   Require all denied,   Require all denied,' /etc/apache2/conf-available/security.conf
+sed -i 's,#</DirectoryMatch>,</DirectoryMatch>,' /etc/apache2/conf-available/security.conf
 
 echo "ServerName $(cat /etc/hostname)" > /etc/apache2/conf-available/servername.conf
 a2enconf servername

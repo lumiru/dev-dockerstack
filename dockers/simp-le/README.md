@@ -1,17 +1,15 @@
-Java-oracle Docker Image by NikoWoot.
-	Based on "Base Docker Image by NikoWoot".
+Simp-le (Let's Encrypt) Image by lumiru.
+	Based on "Base Docker Image by lumiru".
 
-Included packages (in base image) : - wget
-		   							- zip, unzip
-Included packages : - Java 8 JRE
-					- Java 8 JDK
+Included packages (in base image) : wget, zip, unzip
+Included packages : - simp_le
 
 Softwares is in default version of debian 8 repositories.
 
 ==========
 
 CREATED and MAINTENED BY
-Nicolas GAUTIER <ngautier@enroot.fr>
+Frédéric TURPIN <contact@turp.in>
 
 ==========
 	Fork me, if you like my repository.

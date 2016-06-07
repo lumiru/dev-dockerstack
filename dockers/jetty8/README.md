@@ -1,14 +1,13 @@
 Jetty8 Docker Image by lumiru.
 	Based on "Java-default Image by NikoWoot".
 
-Included packages (in base image) : - nano
+Included packages (in base image) : - wget
 									- zip, unzip
-									- openssh-server (sshd)
 									- OpenJRE
 									- OpenJDK		
 Included packages : - jetty-hightide-server
 
-Softwares is in default version of ubuntu 14.04 repositories.
+Softwares is in default version of debian 8 repositories.
 Jetty Server comes from hightide debian packages listed on http://mvnrepository.com/artifact/org.mortbay.jetty.dist/jetty-deb.
 
 ==========
